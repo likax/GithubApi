@@ -1,0 +1,32 @@
+<div class="main-container user-details-main" *ngIf="user; else loading">
+  <button class="btn" (click)="goBack()">Go Back</button>
+  <div class="box-shadow-wrap">
+    <div class="user-details">
+      <h1 class="user-h1">{{ user?.login }}</h1>
+      <div class="user-info">
+        <ul>
+          <li
+            *ngIf="user?.following; else noFollowing"
+            [routerLink]="['./following']"
+          >
+            <a>Following</a> ({{ user?.following }})
+          </li>
+          <li
+            *ngIf="user?.followers; else noFollowers"
+            [routerLink]="['./followers']"
+          >
+            <a>Followers</a> ({{ user?.followers }})
+          </li>
+          <li *ngIf="user?.repos_url; else noRepos" [routerLink]="['./repos']">
+            <a>Repositories</a> ({{ user?.public_repos }})
+          </li>
+        </ul>
+        <img src="{{ user?.avatar_url }}" alt="user" class="img-user" />
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #loading><app-loading></app-loading> </ng-template>
+<ng-template #noFollowing> <h2 class="center">No Following</h2> </ng-template>
+<ng-template #noFollowers> <h2 class="center">No Followers</h2> </ng-template>
+<ng-template #noRepos> <h2 class="center">No Repos</h2> </ng-template>

@@ -1,0 +1,15 @@
+.not-found-404 {
+  height: 100vh;
+  background: url('../../../assets/img/404.jpg') no-repeat center center / cover;
+  .btn {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: .6em 1.1em;
+    font-size: 20px;
+    &:hover {
+      color: black;
+    }
+  }
+}

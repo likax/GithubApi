@@ -1,0 +1,18 @@
+<div class="backdrop" (click)="close.emit()" (event)="onKeydownHandler($event)">
+  <div class="modal" (click)="$event.stopPropagation()">
+   
+    <div class="modal-title">
+      <h1>Hello, This is a modal!</h1>
+      <i class="fas fa-times modal-x" (click)="close.emit()"></i>
+    </div> <hr/>
+    <img src="../../../assets/img/github.png" alt="github" class="github">
+    
+    <p class="modal-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, temporibus
+      eos natus facilis, cumque cupiditate deserunt impedit autem minima, maxime
+      expedita maiores odio facere beatae ut quisquam tempora voluptatibus
+      dicta?
+    </p>
+    <button class="btn btn-red btn-close" (click)="close.emit()">Close</button>
+  </div>
+</div>

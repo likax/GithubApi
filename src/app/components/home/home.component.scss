@@ -1,0 +1,30 @@
+header {
+  font-family: "Source Pro", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../../../assets/img/bg-home.jpg') no-repeat center center / cover;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+}
+.container {
+  width: 75%;
+  margin: 3rem auto;
+}
+h2 {
+  color: #345F90;
+  font-size: 24px;
+  line-height: 1.25;
+  font-family: "Roboto Slab", serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.activez {
+  color: red;
+}

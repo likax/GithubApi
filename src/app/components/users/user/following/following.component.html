@@ -1,0 +1,45 @@
+<ng-container *ngIf="followings">
+  <h1 class="text-center">
+    <span class="text-center-span">{{ username }}</span
+    >&nbsp; Following
+  </h1>
+  <app-user-shared
+    *ngFor="
+      let following of followings
+        | slice: curPage * contentSize - contentSize:curPage * contentSize;
+      trackBy: trackByFn
+    "
+    [person]="following"
+  >
+  </app-user-shared>
+  <ng-container *ngIf="numberOfPages / contentSize > 1">
+    <div class="pagination">
+      <button
+        class="pagination-button"
+        [disabled]="curPage == 1"
+        (click)="curPage = curPage - 1"
+      >
+        prev
+      </button>
+      <ng-container *ngFor="let page of followings; index as i">
+        <div
+          [ngClass]="{ 'active-pag': i == curPage }"
+          *ngIf="shouldDisplay(i)"
+        >
+          <a (click)="curPage = i">{{ i }}</a>
+        </div>
+      </ng-container>
+
+      <button
+        class="pagination-button"
+        [disabled]="curPage >= numberOfPages / contentSize"
+        (click)="curPage = curPage + 1"
+      >
+        next
+      </button>
+    </div>
+  </ng-container></ng-container
+>
+<ng-container *ngIf="loadingService.loadingSpinner | async as loading">
+  <app-loading *ngIf="loading"> </app-loading>
+</ng-container>

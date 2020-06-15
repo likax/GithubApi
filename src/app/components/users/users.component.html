@@ -1,0 +1,19 @@
+<h1 class="text-center">Users</h1>
+<app-user
+  *ngFor="
+    let user of users;
+    trackBy: trackByFn
+  "
+  [user]="user"
+  (userId)="userOnDelete($event)"
+></app-user>
+
+
+
+
+<ng-container *ngIf="loadingService.loadingSpinner | async as loading">
+  <app-loading *ngIf="loading"> ></app-loading>
+</ng-container>
+
+
+

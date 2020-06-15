@@ -1,0 +1,6 @@
+<ul class="pagination">
+  <li *ngFor="let page of pageOptions"
+  [ngClass]="page === currentPage ? 'active-class': ''">
+    <a>{{page}}</a>
+  </li>
+</ul> 

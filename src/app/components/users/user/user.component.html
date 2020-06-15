@@ -1,0 +1,17 @@
+<div class="main-container">
+  <ul class="person-list">
+  <li class="person-item" [routerLink]="['/users',user.login]">
+    <div class="person-div">   
+        <img src="{{ user.avatar_url }}" alt="Github user" class="person-img" />
+      
+    <p class="person-text">{{ user.login }}</p> 
+    </div>
+    <div class="user-icons">
+      <i (click)="onDelete(user.id)" class="fas fa-trash trash"
+      ></i>
+      <i class="fas fa-chevron-right icon-right"></i>
+    </div>
+  </li>
+</ul>
+</div>
+
